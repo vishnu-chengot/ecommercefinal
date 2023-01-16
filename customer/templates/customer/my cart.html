@@ -1,0 +1,79 @@
+{% extends "customer/master.html" %}
+{% load static %}
+{% block content %}
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">sno</th>
+          <th scope="col">customer name</th>
+          <th scope="col">product name</th>
+          <th scope="col">product img</th>
+          <th scope="col">product price</th>
+          <th scope="col">product quantity</th>
+          <th scope="col">total price</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in cart %}
+        <tr>
+          <th scope="row">1</th>
+          <td>{{ item.customer.first_name }} {{ item.customer.second_name }}</td>
+          <td>{{ item.Product.product_name }}</td>
+          <td><img src="{{ item.Product.image.url }}" class="card-img-top" alt="..." style="height: 100px; width: 100px;"></td>
+          <td>{{ item.Product.price }}</td>
+          <td><input type="number" min="1" value="1" max="{{ item.Product.stock }}" id="qty{{ forloop.counter }}" data-item="{{ item.Product.id }}" ></td>
+          <td><input type="text" readonly id="amt{{ item.Product.id }}" value="{{ item.Product.price }}" class="total"></td>
+          <td><button class="btn btn-success">buy now</button></td>
+          <td><a class="text-decoration-none text-danger" href="{% url 'customer:remove_cart_item' item.id %}"> remove</a></td>
+        </tr>
+        {% endfor %}
+        
+        
+      </tbody>
+    </table>
+    
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script>
+   
+
+   $(document).ready(function(){
+    display_amount()
+    $.ajaxSetup({
+            headers: {
+              "X-CSRFToken": '{{ csrf_token }}'
+            }
+        })
+        $("input").change(function(){
+          let qty =$(this).val()
+          let pid =$(this).attr('data-item')
+          
+          $.ajax({
+            url:"{% url 'customer:get_total' %}",
+            data:{
+              'qty': qty,
+              'pid': pid,
+
+            },
+            method : 'POST',
+            success: function(response){
+              $('#amt'+pid).val(response.amount)
+              display_amount()
+              console.log(response.amount)
+            }
+          })
+        })
+
+   
+   })
+function display_amount(){
+  let  limit =document.querySelectorAll('.total')
+    let total =0
+    for (let i = 0; i <limit.length; i++) {
+       total = total+parseInt(limit[i].value)
+      
+    }
+    console.log(total)
+}
+    </script>
+  {% endblock %}

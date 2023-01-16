@@ -1,0 +1,291 @@
+
+.navbar{
+  background-color:#0e3055;
+  width: 100%;
+  height: 100px;
+  position: sticky;
+  top: 2px;
+  border-bottom: #2a323b 1px solid;
+
+}
+
+body{
+  margin: 0px;
+  font-family:  "Muli", sans-serif;
+  position: relative;
+  /* text-align: center; */
+}
+
+a{
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.nav-row{
+  display: inline-block;
+  padding: 10px;
+  position: relative;
+  right: 0px;
+  
+}
+
+.row{
+  margin-top: 0px;
+  display: inline;
+  /* padding: 60px; */
+   padding: 10px 15px 10px 15px;
+   float: right;
+  
+}
+.btn{
+background-color:#dc3545;
+border: none;
+color: white;
+padding: 10px 20px;
+border-radius: 8px;
+font-size: 20px;
+width: 160px;
+height: 50px;
+font-weight:400;
+
+margin-right: 70px;
+}
+.btn:hover{
+  background-color:#072647;
+  cursor: pointer;
+}
+
+/* .select{
+  background-color: #0e5097;
+  color: white;
+  border: none;
+  font-family:  "Muli", sans-serif;
+  font-size: 25px;
+  
+}
+
+option{
+  background-color: white;
+  color: black;
+}
+option::selection{
+  background-color: #dc3545;
+
+}
+.select:hover{
+  border: none;
+} */
+
+.dropdown-btn{
+  color: rgb(252, 252, 252);
+  background-color:#0e3055;
+  font-family:  "Muli", sans-serif;
+  border: none;
+  width: 100px;
+  height: 30px;
+  font-size: 18px;
+}
+.dropdown{
+  display: inline-block;
+  position: relative;
+}
+.dropdown-content{
+  position: absolute;
+  background-color:white;
+  display: none;
+  min-width: 400px;
+  z-index: 1; 
+  text-decoration: none;
+  margin-left: 10px;
+  border-radius: 3px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-top: red 2px solid;
+  
+}
+.dropdown-content a{
+  display: block;
+  padding: 6px 8px;
+  color: black;
+
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+
+}
+ul{
+  padding: 0px;
+  list-style-type: none;
+}
+a{
+  text-decoration: none;
+}
+
+.dropdown-content  a:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+.dropdown:hover .dropdown-btn{
+  background-color:#0e3055;
+  cursor: pointer;
+
+}
+.main-logo{
+  display: inline;
+}
+.img-logo{
+  width: 243px;
+    height: 67px;
+    margin-left: 100px;
+    margin-top: 14px;
+}
+.main-content1{
+  background-color: #0e3055;
+  width: 100%;
+  height: 600px;
+}
+.main-discription{
+  
+  display: inline-block;
+   position: relative; 
+  width: 50%;
+  height: auto;
+  float: left;
+  /* background-color: aqua; */
+
+}
+h1{
+  color: white;
+  display: inline-block;
+  position: absolute;
+  top: 150px; 
+  left: 100px;
+  text-align:left;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  font-size: 33px; 
+}
+
+p{
+  color: rgb(187, 184, 184);
+  display: inline-block;
+  position: absolute;
+  top: 320px; 
+  left: 100px;
+  line-height: 2;
+  font-size: 20px;
+  font-family: "Quicksand", sans-serif;
+  
+}
+
+.first-img{
+  width: 50%;
+  height: auto;
+  float: right;
+  /* background-color: azure; */
+
+}
+.img-first{
+  width: 620px;
+  height: 550px;
+  margin: 20px 0px 0px 40px;
+
+}
+
+.heading-span{
+  color: rgb(219, 218, 218);
+  font-family: "Quicksand", sans-serif;
+  font-weight:bold;
+  position: absolute;
+  top: 124px; 
+  left: 100px;
+  padding-left: 50px;
+}
+.heading-span::before{
+  position: absolute;
+  content: "";
+  left: 0px;
+  width: 40px;
+  height: 2px;
+  background: #FF1949;
+   top: 0px;
+  bottom: 0px;
+  margin: auto 0px; 
+  
+}
+.main-oray-section{
+  width: 100%;
+  height: 200px;
+  background-color: white;
+  position: relative;
+}
+.first-half-oray{
+  width: 100%;
+  height: 100px;
+  background-color: #0e3055;
+}
+.oray-div{
+width: 80%;
+height: 200px;
+position: absolute;
+top: -8px;
+left: 135px;
+background-color:#fd1849  ;
+border-radius: 7px;
+}
+.oray-img{
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  left: 72px;
+  top: 44px;
+}
+h2{
+  color: white;
+  font-size: 35px;
+  margin: 0px;
+  line-height: 2;
+  font-weight: bold;
+  font-family: "Quicksand", sans-serif;
+}
+.oray-content{
+  position: absolute;
+  left: 270px;
+  top: 73px;
+
+}
+.oray-span{
+  color: white;
+  font-weight: bold;
+  margin-left: 60px;
+}
+.oray-span::before{
+  position: absolute;
+  content: "";
+  left: 0px;
+  width: 40px;
+  height: 2px;
+  background: #f0e7e9;
+  top: 0px;
+  bottom: 0px;
+  margin: 0px; 
+  margin-top: 8px;
+
+}
+.download-button{
+  position: absolute;
+  right: 90px;
+  top: 120px;
+  background-color: #385777;
+  border: none;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+

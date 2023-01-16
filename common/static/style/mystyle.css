@@ -1,0 +1,13 @@
+body{
+  background: linear-gradient(90deg, #F5F0E6 70%, #fefefe 60%) !important;
+  /* background: linear-gradient(-70deg, #fa7c30 30%, rgba(0, 0, 0, 0) 50%) !important; */
+  margin: 0px !important;
+}
+
+.modal-bg-color{
+  background: linear-gradient(90deg, #fefefe 70%, #c2e9cc 30%) !important;
+}
+
+.modal-bg-color2{
+  background: linear-gradient(90deg, #fefefe 70%, #f8b29e 30%) !important;
+}

@@ -1,0 +1,104 @@
+ {% extends "customer/master.html" %}
+ {% load static %}
+ {% block content %}
+    <div class="row">
+      <div class="col">
+        <!-- <img src="{% static 'images/graph (1).png' %}" class="img-fluid" alt=""> -->
+        <div class="mt-5 pt-5 ps-4">
+          <h1 class="fw-bold text-color">Welcome {{ name }} to the world of light</h1>
+          <h1 class="fw-bold text-color">be part of us and grow with us!!!!</h1>
+        </div>
+      
+
+      </div>
+      <div class="col">
+        <img src="{% static 'images/main-removebg-preview.png' %}" class="img-fluid main-img" alt="">
+      </div>
+    </div>
+    <div class="container">
+    <div class="row">
+      {% for product in products  %}
+      <div class="col-sm-3">
+        
+        <div class="card border border-0">
+          <a href="{% url 'customer:productdetails1' product.id %}">
+          <img src="{{ product.image.url }}" class="card-img-top" alt="..."></a>
+          <div class="card-body border border-0">
+            <h5 class="card-title">{{ product.product_name}}</h5>
+            <p class="card-text">{{ product.product_discription }}
+            </p>
+            <span class="text-muted fs-4"><s> <span class="text-dark">&#8377;</span> 1000 </s><span
+                class="text-danger">350 OFF</span> </span>
+  
+            <div>
+              <span class="text-danger fs-4"><span class="text-dark text-end">&#8377;</span>{{ product.price }}</span>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+    <!-- Button trigger modal -->
+
+{% endblock %}
+<!-- Modal -->
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-danger">
+        <h1 class="modal-title fs-5 text-light" id="exampleModalLabel">Add Product</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-2">
+            <label for="exampleInputproductname" class="form-label">Product name</label>
+            <input type="text" class="form-control form-control-sm" id="exampleInputproductname" aria-describedby="emailHelp" style="width: 70%;">
+            
+          </div>
+          <div class="mb-2">
+          <label for="exampleInputselect" class="form-label">product category</label>
+          <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="width: 70%;">
+            <option selected>select product</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+          <div class="mb-2">
+            <label for="exampleFormControlTextarea1" class="form-label">product discription</label>
+            <textarea class="form-control form-control-sm" id="exampleFormControlTextarea1" rows="3" style="width: 70%;"></textarea>
+          </div>
+          <div class="mb-2">
+            <label for="exampleInputquantity" class="form-label">quantity</label>
+            <input type="number" class="form-control form-control-sm" id="exampleInputquantity" style="width: 25%;">
+          </div>
+          <div class="mb-2">
+            <label for="exampleInputprice" class="form-label">price</label>
+            <input type="tel" class="form-control form-control-sm" id="exampleInputprice" style="width: 25%;">
+          </div>
+          
+          <div class="mb-2">
+            <label for="exampleInputimg" class="form-label">Choose a image</label>
+            <input type="file" class="form-control form-control-sm" id="exampleInputimg" style="width: 25%;">
+          </div>
+          <div class="mb-2 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Add</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+    
+   

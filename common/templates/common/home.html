@@ -1,0 +1,110 @@
+{% extends "common/master.html" %}
+{% block content %}
+{% load static %}
+
+<div class="container-fluid">
+  <div class="row ">
+    <div class="col">
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'images/light5.jpg' %}" class="d-block w-100 img-size" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'images/light4.jpg' %}" class="d-block w-100 img-size" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'images/light2.jpg' %}" class="d-block w-100 img-size" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3 mt-2">
+      <div class="card border border-0">
+        <img src="{% static 'images/card1.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body border border-0">
+          <h5 class="card-title">Mahganya Industries Designer</h5>
+          <p class="card-text">Home Decorative Modern Wall lamp for Living Room, Bedside, Bedroom, Decorative Light for
+            Indoor Application Without Bulb (Style 1)
+          </p>
+          <span class="text-muted fs-4"><s> <span class="text-dark">&#8377;</span> 1000 </s><span
+              class="text-danger">350 OFF</span> </span>
+
+          <div>
+            <span class="text-danger fs-4"><span class="text-dark text-end">&#8377;</span> 650</span>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 mt-2">
+      <div class="card border border-0">
+        <img src="{% static 'images/card5.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body border border-0">
+          <h5 class="card-title">NOOR LIGHTS Globe Shape</h5>
+          <p class="card-text">Antique Look Decorative Wooden Surface Mounted Classic Wall Light E-27 for Bedroom Living
+            Room Home Decor (Bulb Not Included, Pack of 1),Brown,Standard(Globe Light)</p>
+            <span class="text-muted fs-4"><s> <span class="text-dark">&#8377;</span> 800 </s><span
+            class="text-danger">100 OFF</span> </span>
+
+        <div>
+          <span class="text-danger fs-4"><span class="text-dark text-end">&#8377;</span> 700</span>
+
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3 mt-2">
+      <div class="card border border-0 ">
+        <img src="{% static 'images/card3.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body border border-0">
+          <h5 class="card-title">DesiDiya® Diamond Cluster Pendant Light</h5>
+          <p class="card-text">Home Decor Items, Hanging Ceiling Decorative Chandelier Home, Living Room, Indoor Outdoor
+            Jhumar Lighing, 40 Watts,(Bulb Not Included, Black)</p>
+            <span class="text-muted fs-4"><s> <span class="text-dark">&#8377;</span> 1500 </s> <span
+            class="text-danger"> 550 OFF</span> </span>
+
+        <div>
+          <span class="text-danger fs-4"><span class="text-dark text-end">&#8377;</span> 950</span>
+
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 mt-2">
+      <div class="card border border-0">
+        <img src="{% static 'images/card6.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body border border-0">
+          <h5 class="card-title">Homenique White Glass Globe</h5>
+          <p class="card-text">Down/UP L Shape Brass Antique Sconces E27 Holder LED Decorative Wall Lamp / Dining Hall /
+            Fancy Light for Living Room, Bulb not Included (Without Bulb)</p>
+          <!-- <a href="#" class="btn btn-link btn-lg text-decoration-none text-danger">1250</a> -->
+          <span class="text-muted fs-4"><s> <span class="text-dark">&#8377;</span> 2000 </s><span
+              class="text-danger">750 OFF</span> </span>
+
+          <div>
+            <span class="text-danger fs-4"><span class="text-dark text-end">&#8377;</span> 1250</span>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

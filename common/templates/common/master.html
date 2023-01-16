@@ -1,0 +1,249 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'style/mystyle.css' %}">
+  <link rel="stylesheet" href="{% static 'style/grid.css' %}">
+  <link rel="icon" href="{% static 'favicon/favicon.ico' %}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-transparent">
+    <div class="container-fluid">
+      <a class="navbar-brand text-dark fw-bold" href="#"><span class="text-danger">L!ght</span>-k@rt</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2 rounded-pill" type="search" placeholder="Search" aria-label="Search" style="width:400px;">
+          <button class="btn btn-outline-dark rounded-circle" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          
+          <!-- <li class="nav-item">
+            <a class="nav-link text-dark fw-bold" href="#"> <i class="fa-solid fa-cart-plus fs-5"></i> Cart</a>
+          </li> -->
+          <li class="nav-item me-2">
+            <a class="text-decoration-none text-dark fw-bold" href="{% url 'common:customer_login' %}"><i class="fa-solid fa-user fs-5"></i></a>
+          </li>
+          <!-- #exampleModalToggle -->
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-user"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#">Login</a></li>
+              <li><a class="dropdown-item" href="#"></a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul> -->
+            <li class="nav-item">
+              <a class="text-decoration-none text-dark fw-bold"  href="{% url 'common:seller_login' %}">seller</a>
+            </li>
+            
+            </ul>
+        
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog  modal-lg">
+      <div class="modal-content modal-bg-color">
+        <div class="modal-header">
+          <h1 class="modal-title fs-4" id="exampleModalToggleLabel">Login</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="width: 50%;" placeholder="We'll never share your email with anyone else.">
+              
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" style="width: 50%;">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-outline-success" style="width: 25%;">Login</button>
+          </form>
+        </div>
+        <div class="modal-footer justify-content-center">
+         <span>create a new account?</span><button class="btn btn-link text-success" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">sign up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content modal-bg-color">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Sign up</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form  method="post">
+            {% csrf_token %}
+            <div class="col mb-2">
+              <input type="text" class="form-control form-control-sm" placeholder="First name" aria-label="First name" style="width: 60%;" name="customerfirstname">
+            </div>
+            <div class="col mb-2">
+              <input type="text" class="form-control form-control-sm" placeholder="Last name" aria-label="Last name" style="width: 60%;" name="customerlastname">
+            </div>
+          
+          <div class="col mb-2">
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Address" style="width: 60%;" name="customeraddress"></textarea>
+            </div>
+          <div class="col mb-2">
+            <input type="tel" class="form-control form-control-sm" placeholder="Phonenumber" aria-label="First name" style="width: 60%;" name="customerphone">
+          </div>
+          <div class="col mb-2">
+            <input type="email" class="form-control form-control-sm" placeholder="Email" aria-label="email" style="width: 60%;" name="customeremail">
+          </div>
+          <div class="col mb-2">
+            <input type="password" class="form-control form-control-sm" placeholder="Password" aria-label="password" style="width: 60%;" name="customerpassword">
+          </div>
+          <div class="col mb-2">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <div class="col mb-2">
+            <button type="submit" class="btn btn-outline-success" style="width: 25%;">Sign up</button>
+          </div>
+        </form>
+        </div>
+        <!-- <div class="mb- form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-outline-success" style="width: 25%;">Login</button> -->
+        <div class="modal-footer justify-content-center">
+          
+          <span>Already have an account?</span><button class="btn btn-link text-success" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Login Here</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- -----------------------------seller modal---------------------------------------- -->
+
+  <div class="modal fade" id="exampleModalseller" aria-hidden="true" aria-labelledby="exampleModalseller" tabindex="-1">
+    <div class="modal-dialog  modal-lg">
+      <div class="modal-content modal-bg-color2">
+        <div class="modal-header">
+          <h1 class="modal-title fs-4" id="exampleModalseller"> seller Login</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form method="post">
+            <div class="mb-3">
+              <label for="exampleInputtext1" class="form-label">Username</label>
+              <input type="text" class="form-control" id="exampleInputtext1" aria-describedby="emailHelp" style="width: 50%;">
+              
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword2" class="form-label">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword2" style="width: 50%;">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-outline-success" style="width: 25%;">Login</button>
+          </form>
+        </div>
+        <div class="modal-footer justify-content-center">
+         <span>create a new account?</span><button class="btn btn-link text-success" data-bs-target="#exampleModalseller2" data-bs-toggle="modal">sign up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="exampleModalseller2" aria-hidden="true" aria-labelledby="exampleModalseller" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content modal-bg-color2">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalseller">seller Sign up</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form method="post">
+          {% csrf_token %}
+            <div class="col mb-2">
+              <input type="text" class="form-control form-control-sm" placeholder="First name" aria-label="First name" style="width: 60%;">
+            </div>
+            <div class="col mb-2">
+              <input type="text" class="form-control form-control-sm" placeholder="Last name" aria-label="Last name" style="width: 60%;">
+            </div>
+          
+          <div class="col mb-2">
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Address" style="width: 60%;"></textarea>
+            </div>
+          <div class="col mb-2">
+            <input type="tel" class="form-control form-control-sm" placeholder="Phonenumber" aria-label="First name" style="width: 60%;">
+          </div>
+          <div class="col mb-2">
+            <input type="email" class="form-control form-control-sm" placeholder="Email" aria-label="First name" style="width: 60%;">
+          </div>
+          <div class="col mb-2">
+            <input type="password" class="form-control form-control-sm" placeholder="Password" aria-label="First name" style="width: 60%;">
+          </div>
+          <div class="col mb-2">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <div class="col mb-2">
+            <button type="submit" class="btn btn-outline-success" style="width: 25%;">Sign up</button>
+          </div>
+        </form>
+        </div>
+        <!-- <div class="mb- form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-outline-success" style="width: 25%;">Login</button> -->
+        <div class="modal-footer justify-content-center">
+          
+          <span>Already have an account?</span><button class="btn btn-link text-success" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Login Here</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% block content %}
+
+{% endblock %}
+
+
+<div class="container-fluid">
+  <footer class="py-3 my-4 " style="background-color: #3B2C28;">
+    <ul class="nav justify-content-center border-bottom pb-1 mb-3">
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Features</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Pricing</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-light">FAQs</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-light">About</a></li>
+    </ul>
+    <p class="text-center text-light">© 2022 Company, Inc</p>
+  </footer>
+</div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+
+ 
+
+</html>
